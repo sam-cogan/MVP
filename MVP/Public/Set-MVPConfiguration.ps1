@@ -1,4 +1,23 @@
-﻿Function Set-MVPConfiguration {
+﻿Function Set-MVPConfiguration
+{
+<#
+    .SYNOPSIS
+        Get an Oauth Autorization code
+
+    .DESCRIPTION
+        Call the private Get-MVPOAuthAutorizationCode function and define both an MVPPrimaryKey and MVPAuthorizationCode global variable
+
+    .PARAMETER SubscriptionKey
+        It's the primary key or secondary key you get in your profile on this page https://mvpapi.portal.azure-api.net/developer
+
+    .PARAMETER ClientID
+        It's the clientID you see in the url of the MVPAuth application on your https://account.live.com/consent/Manage page
+
+    .EXAMPLE
+
+    	Set-MVPConfiguration -SubscriptionKey $myKey
+
+#>
 [CmdletBinding()]
 PARAM (
     [Parameter()]
@@ -25,21 +44,3 @@ Process {
 }
 End {}
 }
-<#
-    .SYNOPSIS
-        Get an Oauth Autorization code
-
-    .DESCRIPTION
-        Call the private Get-MVPOAuthAutorizationCode function and define both an MVPPrimaryKey and MVPAuthorizationCode global variable
-
-    .PARAMETER SubscriptionKey
-        It's the primary key or secondary key you get in your profile on this page https://mvpapi.portal.azure-api.net/developer
-
-    .PARAMETER ClientID
-        It's the clientID you see in the url of the MVPAuth application on your https://account.live.com/consent/Manage page
-
-    .EXAMPLE
-
-    Set-MVPConfiguration -SubscriptionKey $myKey
-
-#>
